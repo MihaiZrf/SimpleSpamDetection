@@ -9,7 +9,7 @@ from sklearn.metrics import accuracy_score, precision_score, recall_score
 
 raw_df = pandas.read_csv("Data/mail_data.csv")
 
-print(raw_df.info())
+print(raw_df.head())
 
 #Preprocessing
 
@@ -21,6 +21,8 @@ data['Category'].replace('', np.nan, inplace = True)
 data['Message'].replace('', np.nan, inplace = True)
 
 data.dropna(inplace = True)
+
+print(data.info())
 
 X = data["Message"]
 y = data["Category"]

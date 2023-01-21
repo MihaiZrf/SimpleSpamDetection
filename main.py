@@ -50,12 +50,13 @@ print([acc, prec, rec])
 
 #Testing model
 
-input_mail = ["Hello, u won a free phone!"]
+input_mail = ["Hello, you won a free phone! Contact us for more details."]
 
 input_data = feature_extraction.transform(input_mail)
 
 answer = model.predict(input_data)[0]
 
-dict = {0: "spam", 1: "legit"}
-
-print(dict[answer])
+if answer == 0:
+    print("Spam detected!")
+else:
+    print("Not spam.")
